@@ -2,9 +2,9 @@
 
 ## Important Note
 
-Please note that some code segments are intentionally redacted in compliance with school policy, with descriptions provided in their place. This information is shared for the purpose of demonstrating technical skills to potential employers and should not be publicly disclosed. Please be advised that this repository may only be available temporarily. Prospective employers are welcome to request access to the comprehensive codebase directly from the author.
+Please note that some code segments are intentionally redacted in compliance with school policy. This information is shared for the purpose of demonstrating technical skills to potential employers and should not be publicly disclosed. Please be advised that this repository may only be available temporarily. Prospective employers are welcome to request access to the comprehensive and executable codebase directly from the author.
 
-The documentation intentionally omits detailed descriptions of functions and maintains a general project structure in this public repository. This approach is adopted to uphold the integrity of the instructional staff's efforts and prevent unauthorized duplication of the project.
+Only files that showcase substantial contributions from the authors are included. Furthermore, the documentation intentionally omits detailed descriptions of functions and maintains a general project structure in this public repository. This approach is adopted to uphold the integrity of the instructional staff's efforts and prevent unauthorized duplication of the project.
 
 ## Project Overview
 
