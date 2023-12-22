@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package dfs_service;
+
+service DFSService {
+
+    // Add your service calls here
+
+    // 1. REQUIRED (Parts 1 & 2): A method to store files on the server
+    rpc UploadFile(stream FileContext) returns (FileContext);
+
+    // 2. REQUIRED (Parts 1 & 2): A method to fetch files from the server
+    rpc DownloadFile(FileContext) returns (stream FileContext);
+
+    // 3. REQUIRED (Parts 1 & 2): A method to delete files from the server
+    rpc RemoveFile(FileContext) returns (Blank);
+
+    // 4. REQUIRED (Parts 1 & 2): A method to list all files on the server
+    rpc ListFiles(Blank) returns (FileCatalog);
+
+    // 5. REQUIRED (Parts 1 & 2): A method to get the status of a file on the server
+    rpc GetFileStatus(FileContext) returns (FileContext);
+
+    // 7. Any other methods you deem necessary to complete the tasks of this assignment
+
+}
+
+// Add your message types here
+message Blank {}
+
+message File {
+    bytes chunk = 1;
+}
+
+message MetaData {
+    string name = 1;
+    int32 size = 2;
+    int64 last_modified = 3;
+    int64 creation_time = 4;
+}
+
+// Redacted 2 message types
+
+
+

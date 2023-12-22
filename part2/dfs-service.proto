@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package dfs_service;
+
+service DFSService {
+
+    // Add your service calls here
+
+    // 1. REQUIRED (Parts 1 & 2): A method to store files on the server
+    rpc UploadFile(stream FileContext) returns (FileContext);
+
+
+    // 2. REQUIRED (Parts 1 & 2): A method to fetch files from the server
+    rpc DownloadFile(FileContext) returns (stream FileContext);
+
+
+    // 3. REQUIRED (Parts 1 & 2): A method to list all files on the server
+    rpc ListFiles(Blank) returns (FileCatalog);
+
+
+    // 4. REQUIRED (Parts 1 & 2): A method to get the status of a file on the server
+    rpc GetFileStatus(FileContext) returns (FileContext);
+
+
+    // 5. REQUIRED (Part 2 only): A method to request a write lock from the server
+    rpc GetWriteLock (FileContext) returns (Blank);
+
+
+    // 6. REQUIRED (Part 2 only): A method named CallbackList to handle asynchronous file listing requests
+    //                            from a client. This method should return a listing of files along with their
+    //                            attribute information. The expected attribute information should include name,
+    //                            size, modified time, and creation time.
+    rpc CallbackList (MetaData) returns (FileCatalog);
+
+
+    // 7. REQUIRED (Part 2 only): A method to delete a file from the server
+    rpc RemoveFile(FileContext) returns (Blank);
+
+
+    // 8. Any other methods you deem necessary to complete the tasks of this assignment
+    rpc ReleaseWriteLock (FileContext) returns (Blank);
+
+
+}
+
+// Add your message types here
+message Blank {}
+
+message File {
+    bytes chunk = 1;
+}
+
+message MetaData {
+    string name = 1;
+    int32 size = 2;
+    int64 last_modified = 3;
+    int64 creation_time = 4;
+    string client_id = 5;
+    uint32 crc = 6;
+}
+
+// Redacted 2 message types
